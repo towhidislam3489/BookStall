@@ -3,15 +3,22 @@ import React from 'react';
 import BookCard from '../../component/services/BookCard';
 // import data from '@/../public/booksData.json';
 
-const loadData = async () => {
-    const res = await fetch('http://localhost:3000/booksData.json');
-    const data = await res.json();
-    return data;
+const loadedData = async():Promise<IBookCard[]> => {
+    try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`)
+        const data: IBookCard[] = await res.json();
+        return data;
+    }
+    catch (error) {
+        console.log("Erron fetching Books data : ", error);
+        return [];
+        
+    }
 }
 
 const BooksData = async () => {
 
-    const data: IBookCard[] = await loadData();
+  const data:IBookCard[]=await loadedData();
     return (
         <div className="max-w-[80%] mx-auto mt-30">
             <div className="items-center text-center mb-10">
