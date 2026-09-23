@@ -2,7 +2,7 @@
 
 import { BookContext } from "@/component/context/BookContext";
 import { useContext } from "react";
-import ReadCard from "@/component/services/ReadCard";
+
 import WishCard from "@/component/services/WishCard";
 const Wishlist = () => {
        const { wishlist} = useContext(BookContext);
