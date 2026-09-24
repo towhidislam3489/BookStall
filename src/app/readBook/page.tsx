@@ -11,7 +11,7 @@ import {
     LabelProps,
     Tooltip,
 } from 'recharts';
-import { RechartsDevtools } from '@recharts/devtools';
+// import { RechartsDevtools } from '@recharts/devtools';
 import { useContext } from 'react';
 import { BookContext } from '@/component/context/BookContext';
 
@@ -70,7 +70,7 @@ const ReadList = () => {
                     <Bar dataKey="page" shape={TriangleBar} activeBar>
                         <LabelList content={CustomColorLabel} position="top" />
                     </Bar>
-                    <RechartsDevtools />
+                    {/* <RechartsDevtools /> */}
                 </BarChart> : <div className="max-w-[80%] mx-auto text-center items-center mt-20"> No read book Added </div>}
             </div>
         </div>
